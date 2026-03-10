@@ -1,79 +1,16 @@
+# React + Vite
 
-# Proyecto Flowers 🌸
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Descripción del Proyecto
-Este proyecto es una solución tecnológica para la gestión de un catálogo floral, desarrollada como parte de la formación técnica.
+Currently, two official plugins are available:
 
-# Patrones de Diseño Aplicados
-**Repository Pattern:** Implementado para separar la lógica de acceso a datos (Azure SQL) de la lógica de negocio, facilitando el mantenimiento.
-**Singleton: Utilizado** para gestionar la instancia única de conexión con Azure Blob Storage, optimizando el uso de recursos.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-# Principios SOLID
-**S** (Single Responsibility): Cada módulo tiene una función única; por ejemplo, la clase `ImageLoader` se encarga exclusivamente de la comunicación con el storage.
-**O** (Open/Closed):** El sistema permite agregar nuevos tipos de flores o categorías mediante configuración sin alterar el código base.
-**D** (Dependency Inversion):** Los componentes de alto nivel dependen de abstracciones, no de implementaciones concretas de la base de datos.
+## React Compiler
 
-# Diagrama de los Tiers de la arquitectura
-El diseño del sistema se encuentra documentado en la carpeta de activos del proyecto.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Diagrama de los Tiers (![arquitectura01 png](https://github.com/user-attachments/assets/dcc09749-a404-4a7e-9e7c-e441b40a3cd3)
-)
+## Expanding the ESLint configuration
 
-# CI/CD (Integración y Despliegue Continuo)
-Se utiliza **GitHub Actions** para garantizar la calidad del software:
--**Build:** Compilación automática tras cada commit.
-- **Deploy:** Despliegue automático hacia **Azure App Service** al fusionar cambios en la rama principal.
-
-# Arquitectura del Sistema
-
-La aplicación está organizada en tres niveles:
-
-### Presentation Tier
-- Navegador Web
-- Aplicación React
-
-### Application Tier
-- Hooks personalizados
-- Servicios de acceso a datos
-
-### Data Tier
-- Microsoft Azure Blob Storage
-
-# Diagrama de los Layers
-El diseño del sistema se encuentra documentado en la carpeta de activos del proyecto.
-
-Diagrama de los Layers(![arquitectura02 png](https://github.com/user-attachments/assets/2bff06de-8974-4439-aa4d-d960c76b465d)
-)
-
-# Arquitectura del Sistema
-La aplicación está organizada siguiendo Arquitectura Limpia, separando responsabilidades para mantener el código organizado y fácil de mantener.
-
-## Presentacion layers
-- Manejan la estructura de las páginas de la aplicación.
-- Organizan y combinan los componentes de la interfaz.
-
-## Components (Interfaz)
-- Elementos reutilizables de la interfaz como botones, formularios o tarjetas.
-- Solo manejan la presentación visual.
-
-## Hooks (Lógica de aplicación)
-- Contienen la lógica de estado y comportamiento de la aplicación.
-- Conectan los componentes con los servicios.
-
-## Services (Acceso a datos)
-- Se encargan de la comunicación con APIs o bases de datos.
-- Manejan integraciones externas.
-
-# Patrones de Diseño Aplicados
-
-En esta arquitectura se pueden usar varios patrones de diseño, por ejemplo:
-- **Patrón Component:** Permite crear elementos reutilizables de interfaz.
-- **Patrón Service Layer:** Separa la lógica de acceso a datos en los servicios.
-- **Patrón Hook o Custom Hook:** Permite reutilizar lógica dentro de la aplicación.
-- **Patrón Modular:** Divide el sistema en partes independientes para facilitar mantenimiento.
-
-# Principios SOLID
-
-**Responsabilidad única:** cada capa tiene una función específica.
-**Abierto/Cerrado:** el sistema puede ampliarse sin modificar el código existente.
-**Inversión de dependencias:** las capas superiores dependen de abstracciones y no de implementaciones directas.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
